@@ -26,12 +26,14 @@ void getKeyInput() {
 		if (KeyReg3 != KeyReg2) {
 			KeyReg3 = KeyReg2;
 			if (KeyReg2 == PRESSED_STATE) {
+				subKeyProcess();
 				TimerForKeyPress = 200;
 			}
 		} else {
 			TimerForKeyPress--;
-			if (TimerForKeyPress == 0) {
+			if (TimerForKeyPress == 0 && (KeyReg2 == PRESSED_STATE)) {
 				//todo
+				subKeyProcess();
 				TimerForKeyPress = 200;
 			}
 		}
