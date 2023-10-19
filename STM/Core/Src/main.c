@@ -25,6 +25,7 @@
 #include "software_timer.h"
 #include "7seg.h"
 #include "button.h"
+#include "fsm_automatic.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -96,10 +97,13 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
+  status=INIT;
+
   while (1)
   {
     /* USER CODE END WHILE */
-
+	  fsm_automatic_run();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -200,9 +204,9 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, PA1_Pin|GPIO_PIN_2|PA3_Pin|PA4_Pin
-                          |PA5_Pin|PA6_Pin|PA7_Pin|PA8_Pin
-                          |PA9_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, RED1_Pin|YELLOW1_Pin|GREEN1_Pin|RED2_Pin
+                          |YELLOW2_Pin|GREEN2_Pin|PA7_Pin|PA8_Pin
+                          |PA9_Pin|PA10_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0|GPIO_PIN_1|GPIO_PIN_2|GPIO_PIN_3
@@ -214,12 +218,12 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(Button1_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : PA1_Pin PA2 PA3_Pin PA4_Pin
-                           PA5_Pin PA6_Pin PA7_Pin PA8_Pin
-                           PA9_Pin */
-  GPIO_InitStruct.Pin = PA1_Pin|GPIO_PIN_2|PA3_Pin|PA4_Pin
-                          |PA5_Pin|PA6_Pin|PA7_Pin|PA8_Pin
-                          |PA9_Pin;
+  /*Configure GPIO pins : RED1_Pin YELLOW1_Pin GREEN1_Pin RED2_Pin
+                           YELLOW2_Pin GREEN2_Pin PA7_Pin PA8_Pin
+                           PA9_Pin PA10_Pin */
+  GPIO_InitStruct.Pin = RED1_Pin|YELLOW1_Pin|GREEN1_Pin|RED2_Pin
+                          |YELLOW2_Pin|GREEN2_Pin|PA7_Pin|PA8_Pin
+                          |PA9_Pin|PA10_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

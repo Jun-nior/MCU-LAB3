@@ -97,31 +97,31 @@ int led_buffer[4]={0,0,0,0};
 void update7SEG(int index) {
 	  switch (index) {
 		case 0:
-			HAL_GPIO_WritePin(PA6_GPIO_Port, PA6_Pin, RESET);
-			HAL_GPIO_WritePin(PA7_GPIO_Port, PA7_Pin, SET);
-			HAL_GPIO_WritePin(PA8_GPIO_Port, PA8_Pin, SET);
-			HAL_GPIO_WritePin(PA9_GPIO_Port, PA9_Pin, SET);
-			display7SEG(led_buffer[index]);
-			break;
-		case 1:
-			HAL_GPIO_WritePin(PA6_GPIO_Port, PA6_Pin, SET);
 			HAL_GPIO_WritePin(PA7_GPIO_Port, PA7_Pin, RESET);
 			HAL_GPIO_WritePin(PA8_GPIO_Port, PA8_Pin, SET);
 			HAL_GPIO_WritePin(PA9_GPIO_Port, PA9_Pin, SET);
+			HAL_GPIO_WritePin(PA10_GPIO_Port, PA10_Pin, SET);
 			display7SEG(led_buffer[index]);
 			break;
-		case 2:
-			HAL_GPIO_WritePin(PA6_GPIO_Port, PA6_Pin, SET);
+		case 1:
 			HAL_GPIO_WritePin(PA7_GPIO_Port, PA7_Pin, SET);
 			HAL_GPIO_WritePin(PA8_GPIO_Port, PA8_Pin, RESET);
 			HAL_GPIO_WritePin(PA9_GPIO_Port, PA9_Pin, SET);
+			HAL_GPIO_WritePin(PA10_GPIO_Port, PA10_Pin, SET);
 			display7SEG(led_buffer[index]);
 			break;
-		case 3:
-			HAL_GPIO_WritePin(PA6_GPIO_Port, PA6_Pin, SET);
+		case 2:
 			HAL_GPIO_WritePin(PA7_GPIO_Port, PA7_Pin, SET);
 			HAL_GPIO_WritePin(PA8_GPIO_Port, PA8_Pin, SET);
 			HAL_GPIO_WritePin(PA9_GPIO_Port, PA9_Pin, RESET);
+			HAL_GPIO_WritePin(PA10_GPIO_Port, PA10_Pin, SET);
+			display7SEG(led_buffer[index]);
+			break;
+		case 3:
+			HAL_GPIO_WritePin(PA7_GPIO_Port, PA7_Pin, SET);
+			HAL_GPIO_WritePin(PA8_GPIO_Port, PA8_Pin, SET);
+			HAL_GPIO_WritePin(PA9_GPIO_Port, PA9_Pin, SET);
+			HAL_GPIO_WritePin(PA10_GPIO_Port, PA10_Pin, RESET);
 			display7SEG(led_buffer[index]);
 			break;
 		default:

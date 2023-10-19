@@ -60,22 +60,26 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define Button1_Pin GPIO_PIN_13
 #define Button1_GPIO_Port GPIOC
-#define PA1_Pin GPIO_PIN_1
-#define PA1_GPIO_Port GPIOA
-#define PA3_Pin GPIO_PIN_3
-#define PA3_GPIO_Port GPIOA
-#define PA4_Pin GPIO_PIN_4
-#define PA4_GPIO_Port GPIOA
-#define PA5_Pin GPIO_PIN_5
-#define PA5_GPIO_Port GPIOA
-#define PA6_Pin GPIO_PIN_6
-#define PA6_GPIO_Port GPIOA
+#define RED1_Pin GPIO_PIN_1
+#define RED1_GPIO_Port GPIOA
+#define YELLOW1_Pin GPIO_PIN_2
+#define YELLOW1_GPIO_Port GPIOA
+#define GREEN1_Pin GPIO_PIN_3
+#define GREEN1_GPIO_Port GPIOA
+#define RED2_Pin GPIO_PIN_4
+#define RED2_GPIO_Port GPIOA
+#define YELLOW2_Pin GPIO_PIN_5
+#define YELLOW2_GPIO_Port GPIOA
+#define GREEN2_Pin GPIO_PIN_6
+#define GREEN2_GPIO_Port GPIOA
 #define PA7_Pin GPIO_PIN_7
 #define PA7_GPIO_Port GPIOA
 #define PA8_Pin GPIO_PIN_8
 #define PA8_GPIO_Port GPIOA
 #define PA9_Pin GPIO_PIN_9
 #define PA9_GPIO_Port GPIOA
+#define PA10_Pin GPIO_PIN_10
+#define PA10_GPIO_Port GPIOA
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
