@@ -22,5 +22,6 @@
 #define MAN_YELLOW	14
 
 extern int status;
+extern int status_2;
 
 #endif /* INC_GLOBAL_H_ */
