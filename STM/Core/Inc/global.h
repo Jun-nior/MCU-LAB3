@@ -10,18 +10,26 @@
 
 #include "software_timer.h"
 #include "main.h"
-#include "button.h"
 
 #define INIT		1
 #define AUTO_RED	2
 #define AUTO_GREEN	3
 #define AUTO_YELLOW	4
 
-#define MAN_RED		12
-#define MAN_GREEN	13
-#define MAN_YELLOW	14
+#define RED_GREEN 	5
+#define RED_YELLOW 	6
+#define GREEN_RED	7
+#define YELLOW_RED	8
+
 
 extern int status;
 extern int status_2;
+extern int counter1;
+extern int counter2;
+extern int red;
+extern int yellow;
+extern int green;
+extern int mode;
+extern int tempt;
 
 #endif /* INC_GLOBAL_H_ */

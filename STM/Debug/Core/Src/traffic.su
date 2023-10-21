@@ -1,0 +1,3 @@
+traffic.c:10:6:setcolor1	16	static
+traffic.c:37:6:setcolor2	16	static
+traffic.c:64:6:blinkled	16	static
