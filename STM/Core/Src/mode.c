@@ -73,8 +73,6 @@ void fsm_mode() {
 					green+=1;
 				}
 			}
-			mode=1;
-			status=INIT;
 		}
 		break;
 	case 3:
@@ -120,8 +118,6 @@ void fsm_mode() {
 					green=red-yellow;
 				}
 			}
-			mode=1;
-			status=INIT;
 		}
 		break;
 	case 4:
@@ -164,8 +160,6 @@ void fsm_mode() {
 					yellow=red-green;
 				}
 			}
-			mode=1;
-			status=INIT;
 		}
 		break;
 	default:
