@@ -1,7 +1,4 @@
-7seg.h:1:6:display7SEG	16	static
-7seg.h:95:6:display7SEG_2	16	static
-7seg.h:189:6:scan7SEG	32	static
-main.c:73:5:main	8	static
+main.c:72:5:main	8	static
 main.c:121:6:SystemClock_Config	72	static
 main.c:157:13:MX_TIM2_Init	32	static
 main.c:202:13:MX_GPIO_Init	32	static

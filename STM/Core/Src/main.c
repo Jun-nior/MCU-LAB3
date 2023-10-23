@@ -26,7 +26,6 @@
 #include "input_reading.h"
 #include "input_processing.h"
 #include "software_timer.h"
-#include "7seg.h"
 #include "fsm_automatic.h"
 #include "global.h"
 #include "mode.h"
@@ -107,6 +106,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+	fsm_automatic_run();
 	fsm_mode();
 	fsm_7SEG();
     /* USER CODE BEGIN 3 */

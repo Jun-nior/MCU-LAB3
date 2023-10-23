@@ -8,56 +8,20 @@
 #include "mode.h"
 
 void fsm_mode() {
-	switch (mode) {
-	case 1:
-		fsm_automatic_run();
-		if (is_button_pressed_1s(0)) {
-			if (timer1_flag==1) {
-				tempt=red;
-				setcolor1(AUTO_RED);
-				setcolor2(AUTO_RED);
-				mode=2;
-				setTimer1(100);
-			}
-		} else if (check_button_flag(0)) {
-			mode=2;
-			tempt=red;
-			setcolor1(AUTO_RED);
-			setcolor2(AUTO_RED);
-			setTimer1(50);
-			setTimer3(25);
-		}
-		break;
+	switch (status) {
 	case 2:
-		if (is_button_pressed_1s(0)) {
-			if (timer1_flag==1) {
-				mode=3;
-				tempt=yellow;
-				setcolor1(AUTO_YELLOW);
-				setcolor2(AUTO_YELLOW);
-				setTimer1(100);
-			}
-		} else {
-			if (timer1_flag==1) {
-				blinkled(AUTO_RED);
-				setTimer1(50);
-			}
-			if (check_button_flag(0)) {
-				mode=3;
-				tempt=yellow;
-				setcolor1(AUTO_YELLOW);
-				setcolor2(AUTO_YELLOW);
-				setTimer1(50);
-			}
+		if (timer1_flag==1) {
+			blinkled(AUTO_RED);
+			setTimer1(50);
 		}
-		if (is_button_pressed_1s(1)) {
-			if (timer3_flag==1) {
-				if (tempt>99) {
-					tempt=1;
-				} else tempt++;
-				setTimer3(25);
-			}
-		} else if (check_button_flag(1)) {
+		if (check_button_flag(0)) {
+			status=3;
+			tempt=yellow;
+			setcolor1(AUTO_YELLOW);
+			setcolor2(AUTO_YELLOW);
+			setTimer1(50);
+		}
+		if (check_button_flag(1)) {
 			if (tempt>99) {
 				tempt=1;
 			} else tempt++;
@@ -76,35 +40,18 @@ void fsm_mode() {
 		}
 		break;
 	case 3:
-		if (is_button_pressed_1s(0)) {
-			if (timer1_flag==1) {
-				mode=4;
-				tempt=green;
-				setcolor1(AUTO_GREEN);
-				setcolor2(AUTO_GREEN);
-				setTimer1(100);
-			}
-		} else {
-			if (timer1_flag==1) {
-				blinkled(AUTO_YELLOW);
-				setTimer1(50);
-			}
-			if (check_button_flag(0)) {
-				mode=4;
-				tempt=green;
-				setcolor1(AUTO_GREEN);
-				setcolor2(AUTO_GREEN);
-				setTimer1(50);
-			}
+		if (timer1_flag==1) {
+			blinkled(AUTO_YELLOW);
+			setTimer1(50);
 		}
-		if (is_button_pressed_1s(1)) {
-			if (timer3_flag==1) {
-				if (tempt>99) {
-					tempt=1;
-				} else tempt++;
-				setTimer3(25);
-			}
-		} else if (check_button_flag(1)) {
+		if (check_button_flag(0)) {
+			status=4;
+			tempt=green;
+			setcolor1(AUTO_GREEN);
+			setcolor2(AUTO_GREEN);
+			setTimer1(50);
+		}
+		if (check_button_flag(1)) {
 			if (tempt>99) {
 				tempt=1;
 			} else tempt++;
@@ -121,32 +68,14 @@ void fsm_mode() {
 		}
 		break;
 	case 4:
-		if (is_button_pressed_1s(0)) {
-			if (timer1_flag==1) {
-				mode=2;
-				tempt=red;
-				setcolor1(AUTO_RED);
-				setcolor2(AUTO_RED);
-				setTimer1(100);
-			}
-		} else {
-			if (timer1_flag==1) {
-				blinkled(AUTO_GREEN);
-				setTimer1(50);
-			}
-			if (check_button_flag(0)) {
-				mode=1;
-				status=INIT;
-			}
+		if (timer1_flag==1) {
+			blinkled(AUTO_GREEN);
+			setTimer1(50);
 		}
-		if (is_button_pressed_1s(1)) {
-			if (timer3_flag==1) {
-				if (tempt>99) {
-					tempt=1;
-				} else tempt++;
-				setTimer3(25);
-			}
-		} else if (check_button_flag(1)) {
+		if (check_button_flag(0)) {
+			status=INIT;
+		}
+		if (check_button_flag(1)) {
 			if (tempt>99) {
 				tempt=1;
 			} else tempt++;

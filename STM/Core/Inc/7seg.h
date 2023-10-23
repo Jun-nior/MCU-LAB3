@@ -185,32 +185,3 @@ void display7SEG_2(int counter) {
 	}
 }
 
-int state7SEG=1;
-void scan7SEG(int counter1, int counter2) {
-	int one=counter1/10;
-	int two=counter1%10;
-
-	int three=counter2/10;
-	int four=counter2%10;
-
-	switch(state7SEG) {
-	case 1:
-		HAL_GPIO_WritePin(PA7_GPIO_Port,PA7_Pin,SET);
-		HAL_GPIO_WritePin(PA8_GPIO_Port,PA8_Pin,RESET);
-
-		display7SEG(two);
-		display7SEG_2(four);
-		state7SEG=2;
-		break;
-	case 2:
-		HAL_GPIO_WritePin(PA7_GPIO_Port,PA7_Pin,RESET);
-		HAL_GPIO_WritePin(PA8_GPIO_Port,PA8_Pin,SET);
-
-		display7SEG(one);
-		display7SEG_2(three);
-		state7SEG=1;
-		break;
-	default:
-		break;
-	}
-}

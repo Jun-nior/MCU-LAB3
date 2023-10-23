@@ -1,3 +1,6 @@
-traffic.c:10:6:setcolor1	16	static
-traffic.c:37:6:setcolor2	16	static
-traffic.c:64:6:blinkled	16	static
+traffic.c:10:6:display7SEG	16	static
+traffic.c:104:6:display7SEG_2	16	static
+traffic.c:197:6:setcolor1	16	static
+traffic.c:224:6:setcolor2	16	static
+traffic.c:251:6:blinkled	16	static
+traffic.c:271:6:scan7SEG	32	static
