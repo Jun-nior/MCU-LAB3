@@ -100,15 +100,17 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-
+  uint32_t prescaler=htim2.Init.Prescaler;
+  uint32_t period= htim2.Init.Period;
+  calculate_x(prescaler,period);
   status=INIT;
-  setTimer4(50);
+  setTimer4(50*x);
   while (1)
   {
     /* USER CODE END WHILE */
-	fsm_automatic_run();
-	fsm_mode();
-	fsm_7SEG();
+	  fsm_automatic_run();
+	  fsm_mode();
+	  fsm_7SEG();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -168,9 +170,9 @@ static void MX_TIM2_Init(void)
 
   /* USER CODE END TIM2_Init 1 */
   htim2.Instance = TIM2;
-  htim2.Init.Prescaler = 7999;
+  htim2.Init.Prescaler = 799;
   htim2.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim2.Init.Period = 10;
+  htim2.Init.Period = 1000;
   htim2.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim2.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim2) != HAL_OK)

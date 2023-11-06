@@ -31,5 +31,8 @@ extern int yellow;
 extern int green;
 extern int mode;
 extern int tempt;
+extern double x;
+
+void calculate_x(uint32_t, uint32_t);
 
 #endif /* INC_GLOBAL_H_ */

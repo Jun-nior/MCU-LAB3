@@ -12,14 +12,14 @@ void fsm_mode() {
 	case 2:
 		if (timer1_flag==1) {
 			blinkled(AUTO_RED);
-			setTimer1(50);
+			setTimer1(50*x);
 		}
 		if (check_button_flag(0)) {
 			status=3;
 			tempt=yellow;
 			setcolor1(AUTO_YELLOW);
 			setcolor2(AUTO_YELLOW);
-			setTimer1(50);
+			setTimer1(50*x);
 		}
 		if (check_button_flag(1)) {
 			if (tempt>99) {
@@ -42,14 +42,14 @@ void fsm_mode() {
 	case 3:
 		if (timer1_flag==1) {
 			blinkled(AUTO_YELLOW);
-			setTimer1(50);
+			setTimer1(50*x);
 		}
 		if (check_button_flag(0)) {
 			status=4;
 			tempt=green;
 			setcolor1(AUTO_GREEN);
 			setcolor2(AUTO_GREEN);
-			setTimer1(50);
+			setTimer1(50*x);
 		}
 		if (check_button_flag(1)) {
 			if (tempt>99) {
@@ -70,7 +70,7 @@ void fsm_mode() {
 	case 4:
 		if (timer1_flag==1) {
 			blinkled(AUTO_GREEN);
-			setTimer1(50);
+			setTimer1(50*x);
 		}
 		if (check_button_flag(0)) {
 			status=INIT;

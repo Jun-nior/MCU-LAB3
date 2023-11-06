@@ -12,8 +12,8 @@
 void fsm_automatic_run() {
 	switch(status) {
 	case INIT:
-		setTimer1(green*100);
-		setTimer2(100);
+		setTimer1(green*100*x);
+		setTimer2(100*x);
 		setcolor1(AUTO_RED);
 		setcolor2(AUTO_GREEN);
 		counter1=red;
@@ -26,21 +26,21 @@ void fsm_automatic_run() {
 			tempt=red;
 			setcolor1(AUTO_RED);
 			setcolor2(AUTO_RED);
-			setTimer1(50);
-			setTimer3(25);
+			setTimer1(50*x);
+			setTimer3(25*x);
 		}
 		if (timer1_flag==1) {
 			status=RED_YELLOW;
 			setcolor2(AUTO_YELLOW);
 			counter2=yellow;
-			setTimer1(yellow*100);
-			setTimer2(100);
+			setTimer1(yellow*100*x);
+			setTimer2(100*x);
 			counter1--;
 		}
 		if (timer2_flag==1) {
 			counter1--;
 			counter2--;
-			setTimer2(100);
+			setTimer2(100*x);
 		}
 		break;
 	case RED_YELLOW:
@@ -50,28 +50,28 @@ void fsm_automatic_run() {
 			counter2=red;
 			setcolor1(AUTO_GREEN);
 			setcolor2(AUTO_RED);
-			setTimer1(green*100);
-			setTimer2(100);
+			setTimer1(green*100*x);
+			setTimer2(100*x);
 		}
 		if (timer2_flag==1) {
 			counter1--;
 			counter2--;
-			setTimer2(100);
+			setTimer2(100*x);
 		}
 		break;
 	case GREEN_RED:
 		if (timer1_flag==1) {
 			status=YELLOW_RED;
 			setcolor1(AUTO_YELLOW);
-			setTimer1(yellow*100);
-			setTimer2(100);
+			setTimer1(yellow*100*x);
+			setTimer2(100*x);
 			counter1=yellow;
 			counter2--;
 		}
 		if (timer2_flag==1) {
 			counter1--;
 			counter2--;
-			setTimer2(100);
+			setTimer2(100*x);
 		}
 		break;
 	case YELLOW_RED:
@@ -81,13 +81,13 @@ void fsm_automatic_run() {
 			counter2=green;
 			setcolor1(AUTO_RED);
 			setcolor2(AUTO_GREEN);
-			setTimer1(yellow*100);
-			setTimer2(100);
+			setTimer1(yellow*100*x);
+			setTimer2(100*x);
 		}
 		if (timer2_flag==1) {
 			counter1--;
 			counter2--;
-			setTimer2(100);
+			setTimer2(100*x);
 		}
 		break;
 	default:
@@ -103,7 +103,7 @@ void fsm_7SEG() {
 	case 8:
 		if (timer4_flag==1) {
 			scan7SEG(counter1, counter2);
-			setTimer4(50);
+			setTimer4(50*x);
 		}
 		break;
 	case 2:
@@ -111,7 +111,7 @@ void fsm_7SEG() {
 	case 4:
 		if (timer4_flag==1) {
 			scan7SEG(tempt, status);
-			setTimer4(50);
+			setTimer4(50*x);
 		}
 	default:
 		break;
